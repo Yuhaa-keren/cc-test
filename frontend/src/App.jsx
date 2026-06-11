@@ -227,6 +227,7 @@ function App() {
                     </div>
                   </div>
                   <h3 className="menu-card-name">{detailed.nama}</h3>
+                  <span className="member-nim">{detailed.nim}</span>
                 </div>
               );
             })}
