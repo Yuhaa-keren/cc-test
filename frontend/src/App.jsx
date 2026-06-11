@@ -40,10 +40,11 @@ function App() {
   const [loginError, setLoginError] = useState(null);
   const [selectedMember, setSelectedMember] = useState(null);
 
+  // untuk akses API project cct
   const fetchData = () => {
     setLoading(true);
     setError(null);
-    fetch('http://localhost:5001/api/team')
+    fetch('/api/team')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Gagal mengambil data dari server Flask');
@@ -194,8 +195,8 @@ function App() {
             {teamMembers.map((member, index) => {
               const detailed = getMemberDetails(member);
               return (
-                <div 
-                  className="menu-card clickable-card" 
+                <div
+                  className="menu-card clickable-card"
                   key={index}
                   onClick={() => {
                     setSelectedMember(detailed);
@@ -269,7 +270,7 @@ function App() {
                 </div>
               </div>
             </div>
-            
+
             <div style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'center' }}>
               <button className="btn-secondary" onClick={() => setPage('menu')}>
                 Kembali ke Menu
