@@ -105,8 +105,9 @@ function App() {
     };
   };
 
-  // Data team yang akan digunakan di Menu/Profil (menggunakan data API jika ada, jika tidak ada fallback)
-  const teamMembers = data?.team || fallbackTeam;
+  // Data team yang digunakan di Menu/Profil selalu menggunakan data hardcoded (fallbackTeam)
+  // agar nama dan foto selalu tampil, tidak bergantung pada database
+  const teamMembers = fallbackTeam;
 
   return (
     <div className="app-container">
