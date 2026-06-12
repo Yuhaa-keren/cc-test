@@ -35,7 +35,7 @@ def get_team():
     try:
         conn = get_db_connection()
         cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM anggota_kelompok")
+        cursor.execute("SELECT nama_lengkap AS nama, nim, foto FROM anggota_kelompok")
         team_members = cursor.fetchall()
         cursor.close()
         conn.close()
